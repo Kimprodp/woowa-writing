@@ -55,7 +55,7 @@ public class Review {
 ```java
 public class ReviewGroup {
 
-		private List<Review> reviews;
+	private List<Review> reviews;
 
     public void addReview(Review review) {
         if (canAddReview(review)) {
@@ -114,7 +114,7 @@ public class Review {
         }
     }
 ```
-이는 `Review` 가 `Review`  자체에 대한 책임뿐만 아니라, `ReviewGroup`의 책임도 지니게 하면서 **단일 책임 원칙을 위반**하게 됩니다.
+이는 `Review` 가 `Review` 자체에 대한 책임뿐만 아니라, `ReviewGroup`의 책임도 지니게 하면서 **단일 책임 원칙을 위반**하게 됩니다.
 
 - `Review`는 `ReviewGroup` 이 없는 상황에서 독립적으로 재사용할 수 없게 됩니다.
 - `Review`가 `ReviewGroup`의 기능을 직접 사용하게 되면서 `ReviewGroup`이 관리해야 할 책임이 `Review`로 넘어가게 됩니다.
@@ -210,7 +210,7 @@ public class ReviewerGroup {
 ```java
 public class Review {
 
-		// 다른 필드
+	// 다른 필드
 
     @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.PERSIST)
     @JoinColumn(name = "review_id", nullable = false, updatable = false)
